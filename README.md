@@ -1,1 +1,1 @@
-# exodia
+# project exodia
