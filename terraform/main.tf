@@ -20,3 +20,14 @@ resource "aws_s3_bucket" "bucket" {
     bucket = "exodia-super-bucket"
     acl    = "private"
 }
+
+# Create an EC2 instance
+resource "aws_instance" "instance" {
+  ami           = "ami-0ff8a91507f77f867"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "exodia-instance"
+    "Terraform" = "Yes"
+  }
+}

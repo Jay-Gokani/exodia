@@ -5,9 +5,9 @@ variable "region" {
 }
 
 variable "access_key" {
-    default     = "<input value or path>"
+    default     = "<input key here>"
 }
 
 variable "secret_key" {
-    default     = "<input value or path>"
+    default     = "<input key here>"
 }
