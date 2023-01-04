@@ -37,9 +37,19 @@
 
 14. to push the same tag to a different repo, just change the Repo - it can be pre-existing or new
 
-15. docker image rm jaygokani:getting-started2:latest
-*This removes the image locally*
+15. docker images
+*shows images*
 
-16. docker pull jaygokani:getting-started2:latest
-*This pulls the image from DockerHub*
+16. docker image rm jaygokani:getting-started2:latest
+*this removes the image locally*
 
+17. docker pull jaygokani:getting-started2:latest
+*this pulls the image from DockerHub*
+
+18. docker container stop 638b1239
+*stops the container*
+
+19. docker container rm 638b1239
+*removes this container*
+
+*** check which image the running container is using then rm all images and containers not in use
