@@ -1,4 +1,4 @@
-### Instructions for building the Docker container
+### Instructions for building and running the app in a Docker container
 
 1. python3 -m ensure pip 
 
@@ -13,6 +13,14 @@
 
 6. docker build --tag flask-docker .
 *builds the image in the current dir and names it*
+
+*alternatively, docker compose can be used*
+*ensure you are in the dir which the compose.yaml file is in*
+docker-compose up
+
+*to tear it down:*
+ctrl + c 
+docker-compose down
 
 7. docker run -d -p 5000:5000 flask-docker
 *starts the container in detached mode with port 5000 allocated to the container on my machine and 5000 where the app runs*
@@ -51,5 +59,3 @@
 
 19. docker container rm 638b1239
 *removes this container*
-
-*** check which image the running container is using then rm all images and containers not in use
