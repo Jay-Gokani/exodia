@@ -1,0 +1,39 @@
+# define services
+services:
+  # name the first service 'wordpress' as it uses the wordpress image
+  wordpress:
+    image: wordpress:latest
+    # map port 8085 of the host to port 80 of the container
+    ports:
+      - 8085:80
+    # advice compose to first make the mariadb container as it is needed for the worpress one
+    depends_on:
+      - db
+    # define environment variables which wordpress needs to use
+    environment:
+      - WORDPRESS_DB_HOST=mysql 
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+    restart: always
+  # define the db matching the WP_DB_HOST with db container name and env variables to enable user access 
+  db:
+    image: mariadb:10.6.4-focal
+    environment:
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_ROOT_PASSWORD=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    expose:
+      - 3306
+      - 33060
+    restart: always
+    # create stateful storage in a vol, specifying the data in the db
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
+
+# TODO: 
+# push to github
+# write a readme.md of what this is
