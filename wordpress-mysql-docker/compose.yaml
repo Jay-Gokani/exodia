@@ -35,5 +35,4 @@ volumes:
   db_data:
 
 # TODO: 
-# push to github
 # write a readme.md of what this is
