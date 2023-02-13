@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  labels:
+    app: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo
+        # after checking the mogo docker image on dockerhub, it specified the below have to be given
+        ports:
+        - containerPort: 27017
+        env:
+        # as this file is going to be held on a public repo, we need a secret to store the values below in K8s
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value:
+        - name: MONGO_INITDB_ROOT_PASSSWORD
+          value:

@@ -59,3 +59,13 @@ docker-compose down
 
 19. docker container rm 638b1239
 *removes this container*
+
+docker exec -it 8b52271fdcd7 /bin/sh
+*allows to exec into a container*
+*from here, I can list files for example*
+*sh is used as it's an Alpine linux distro*
+*for some other distros, bash needs to be used instead of sh*
+*either can be installed into the container though* 
+
+ctrl-D 
+*to exit out the shell of the container*
