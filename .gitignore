@@ -8,3 +8,7 @@
 
 # Crash logs
 *.log
+
+# Minikube installations
+minikube-darwin-amd64
+minikube-darwin-arm64
