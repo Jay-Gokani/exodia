@@ -14,5 +14,17 @@ Request flow through K8s components:
 Instructions:
 1. Create a directory to house all the files
 
-2. Create a mongodb yaml file to house the deployment config
+2. Create a mongodb yaml file which specifies the config. This will be in a public repo so a Secret needs to be created so sensitive data isn't exposed
 
+3. Create a secret which defines the credentials for the mongodb in another config file. The username and password need to be base64 encoded. Put the key and value details in the Deployment config.
+
+4. Easiest way to encode text is by running the following in the terminal:
+echo -n "<text>" | base64
+
+5. Apply the Secret by running:
+minikube start
+kubectl apply -f mongo-secret.yaml
+kubectl get secret
+Note the f flag is for 'filename'
+
+6. Apply the Deployment

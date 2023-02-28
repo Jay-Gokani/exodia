@@ -22,7 +22,14 @@ spec:
         - containerPort: 27017
         env:
         # as this file is going to be held on a public repo, we need a secret to store the values below in K8s
+        # the name and key comes from the Secret config
         - name: MONGO_INITDB_ROOT_USERNAME
-          value:
-        - name: MONGO_INITDB_ROOT_PASSSWORD
-          value:
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-username
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-password
