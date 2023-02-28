@@ -28,3 +28,9 @@ kubectl get secret
 Note the f flag is for 'filename'
 
 6. Apply the Deployment
+kubectl apply -f mongodb.yaml
+
+7. Watch the resources which are being created
+kubectl get all
+kubectl get pod
+kubectl get pod --watch
