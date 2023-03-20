@@ -52,4 +52,4 @@ spec:
       port: 27017
       # deployment port (of container which was referenced in the deployment - has to match)  
       targetPort: 27017
-      # nb: these two ports can be different from eachother
+      # nb: these two ports can be different from eachother.
