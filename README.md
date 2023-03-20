@@ -1,2 +1,2 @@
 ### Project exodia
-I aim to showcase my DevOps skills through using multiple tools within this project!
+In this repo, I am currently completing numerous challenges to practice using a variety of DevOps tools!
