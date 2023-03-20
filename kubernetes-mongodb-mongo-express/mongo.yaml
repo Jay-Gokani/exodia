@@ -33,3 +33,23 @@ spec:
             secretKeyRef:
               name: mongodb-secret
               key: mongo-root-password
+---
+# YAML syntax is triple dash for a new doc
+# deployment and service usually go together so to prevent one getting lost, it's a good idea to have them in the same doc
+
+apiVersion: v1
+kind: Service
+metadata:
+  # this name can be anything
+  name: mongodb-service
+spec:
+  selector:
+    # attaches to the pod of the app with label of mongodb
+    app: mongodb
+  ports:
+    - protocol: TCP
+      # service port
+      port: 27017
+      # deployment port (of container which was referenced in the deployment - has to match)  
+      targetPort: 27017
+      # nb: these two ports can be different from eachother
