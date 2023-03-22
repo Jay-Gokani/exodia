@@ -1,4 +1,4 @@
-User request -> mongo-express service -> mongo-express + mongo-secret + mongo-configmap -> mongodb service -> mongodb + mongo-secret -> (loops) 
+User request -> mongo-express external service -> mongo-express + mongo-secret -> mongodb internal service + mongo-configmap specified URL -> mongodb + mongo-secret for auth -> (loops) 
 
 Note: if Docker Desktop or the computer restarts, an error will appear stating that the host and port can't be connected to
 Minikube will need to be restarted with:
@@ -68,3 +68,8 @@ one has come back for kubernetes, one for mongodb and one named 'mongo-express-s
 
 16. minikube service mongo-express-service
 this is needed for minikube to assign an external IP address to the service, which can then be accessed through a browser
+
+17. minikube delete --all 
+delete the entire cluster
+be sure to start minikube again when creating the next project with:
+minikube start 

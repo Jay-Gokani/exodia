@@ -6,3 +6,4 @@ metadata:
 # any component can use this configmap rather than hard coding the IP of the mongodb-service in everything
 data:
   database_url: mongodb-service
+  k-
