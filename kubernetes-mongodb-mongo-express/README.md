@@ -53,51 +53,58 @@ kubectl get pod --watch
 ```
 
 8. Add a service config to the mongo.yaml file  
-this is often added to the same file as the service attaches to the deployment  
+This is often added to the same file as the service attaches to the deployment  
 
-9. ```
+9. Apply the service
+```
 kubectl apply -f mongo.yaml
 ```  
-an output will come back stating that the deployment was unchanged but service created
+An output will come back stating that the deployment was unchanged but service created
 
-10. ```
+10. Check the service was successfully attached
+```
 kubectl describe service mongodb-service
 ```  
-returns an output with one line being which app it is attached to, and the endpoint of the pod, confirming it was successfully attached
+Returns an output with one line being which app it is attached to, and the endpoint of the pod, confirming it was successfully attached
 
-11. write out scripts for mongo-express.yaml and mongo-configmap.yaml  
-the configmap is used for holding the IP for the mongodb service - it can be referenced by other files too
+11. Write out scripts for mongo-express.yaml and mongo-configmap.yaml  
+The configmap is used for holding the IP for the mongodb service - it can be referenced by other files too
 
-12. ```
+12. Apply the configmap
+```
 kubectl apply -f mongo-configmap.yaml
 ```  
-this has to be done before the mongo-express deployment as it is a dependancy
+This has to be done before the mongo-express deployment as it is a dependancy
 
-13. ```
+13. Apply mongo-express
+```
 kubectl apply -f mongo-express.yaml
 ```  
 
-14. add Service config to mongo-express.yaml  
-dash three times under the script  
-the Service attaches to the mongo-express deployment  
-the default 'type' which does not need to be explicitly express is internal which gives an internal Cluster IP
-we choose LoadBalancer type which is external
+14. Add Service config to mongo-express.yaml  
+Dash three times under the script  
+The service attaches to the mongo-express deployment  
+The default 'type' which does not need to be explicitly expressed is internal which gives an internal Cluster IP
+We choose LoadBalancer type which is external
 
-15. ```
+15. Investigate the services
+```
 kubectl get service
 ```  
-one has come back for kubernetes, one for mongodb and one named 'mongo-express-service'
+One has come back for kubernetes, one for mongodb and one named 'mongo-express-service'
 
-16. ```
+16. Assign an external IP address to the service
+```
 minikube service mongo-express-service
 ```  
-this is needed for minikube to assign an external IP address to the service, which can then be accessed through a browser
+This is needed for minikube to assign an external IP address to the service, which can then be accessed through a browser
 
-17. ```
+17. Delete the cluster
+```
 minikube delete --all
 ```  
-delete the entire cluster  
-be sure to start minikube again when creating the next project with:  
+Delete the entire cluster  
+Be sure to start minikube again when creating the next project with:  
 ```
 minikube start
 ```
