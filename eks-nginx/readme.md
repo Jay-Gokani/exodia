@@ -1,10 +1,10 @@
-### EKS Cluster
+# EKS Cluster
 
 - Creating an AWS EKS cluster through the GUI
 - The aim of this was to understand at a high-level how this works
 - This is far from best practice
 
-# Overview
+### Overview
 
 - An AWS IAM User is created with an assigned key-pair
 - EC2 instance is created, logged-in to and eksctl (to create the ekscluster), kubectl (to manage the k8s cluster) and AWS CLI (to interact with AWS resources) are installed on the instance
