@@ -57,11 +57,13 @@ eksctl create cluster -f eks-config.yaml
 We could even use a tf file instead
 
 5. Use kubectl to create a:
-    1. LoadBalancer (to connect to the internet) - this has to come first
+
+LoadBalancer (to connect to the internet) - this has to come first
 ```
 kubectl apply -f service.yaml
 ```
-    2. Deployment (containing an NGINX image from DockerHub)
+ 
+Deployment (containing an NGINX image from DockerHub)
 ```
 kubectl apply -f deployment.yaml
 ```
