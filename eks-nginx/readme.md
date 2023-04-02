@@ -1,17 +1,17 @@
-### EKS Cluster
+# EKS Cluster
 
 - Creating an AWS EKS cluster through the GUI
 - The aim of this was to understand at a high-level how this works
 - This is far from best practice
 
-# Overview
+### Overview
 
 - An AWS IAM User is created with an assigned key-pair
 - EC2 instance is created, logged-in to and eksctl (to create the ekscluster), kubectl (to manage the k8s cluster) and AWS CLI (to interact with AWS resources) are installed on the instance
 - EKS cluster created through the terminal of the EC2 instance
 - In the k8s cluster, LoadBalancer then Deployment are created through the EC2 instance terminal
 
-# How this might work on a real project
+### How this might work on a real project
 
 - AWS IAM Role created through .tf script
 - Key-pair used to authenticate on local CLI to AWS, or better yet a secrets manager with a rotating hash
@@ -19,7 +19,7 @@
 - K8s components deployed using kubectl and Helm charts
 - No EC2 needed
 
-# Steps
+### Steps
 
 1. IAM User in AWS Console is created, administrator permissions attached and a key-pair created
 2. Create and launch EC2 instance with AWS Linux 2 image, auto public IP provided and key-pair attached
