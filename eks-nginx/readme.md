@@ -1,3 +1,5 @@
+![growtika-GSiEeoHcNTQ-unsplash](https://user-images.githubusercontent.com/112378055/229515766-becf1c42-8f8d-4517-aaf1-fc3b1769534d.jpg)
+
 # EKS Cluster
 
 - Creating an AWS EKS cluster through the GUI
