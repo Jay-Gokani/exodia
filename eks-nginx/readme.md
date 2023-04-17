@@ -1,4 +1,4 @@
-![growtika-GSiEeoHcNTQ-unsplash](https://user-images.githubusercontent.com/112378055/229515766-becf1c42-8f8d-4517-aaf1-fc3b1769534d.jpg)
+![eks-nginx (1)](https://user-images.githubusercontent.com/112378055/231200251-b0315b2d-34ed-486c-afc7-97f9ddf2349c.jpg)
 
 # EKS Cluster
 
