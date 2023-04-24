@@ -15,7 +15,7 @@ spec:
         env: {{ .Values.deployment.env }}
     spec:
       containers:
-      - name: {{ .Values.deployment.containers-name }}
-        image: {{ .Values.deployment.image }}
-        ports:
-        - containerPort: {{ .Values.deployment.port }}
+        - name: {{ .Values.deployment.containersname }}
+          image: {{ .Values.deployment.image }}
+          ports:
+            - containerPort: {{ .Values.deployment.containerPort }}

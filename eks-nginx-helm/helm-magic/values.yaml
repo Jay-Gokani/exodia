@@ -7,7 +7,7 @@ deployment:
   name: nginx-deployment
   env: dev
   replicas: 3
-  containers-name: nginx
+  containersname: nginx
   image: nginx
   containerPort: 80
   
