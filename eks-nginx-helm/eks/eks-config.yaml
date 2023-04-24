@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1
+kind: ClusterConfig
+
+metadata:
+    name: dev
+    region: us-east-1 # may need to change
+    tags:
+    creator: jay-gokani
+    environment: dev
+
+nodeGroups:
+    - name: standard-workers
+      instanceType: t3.medium
+      desiredCapacity: 3
+      minSize: 1
+      maxSize: 4

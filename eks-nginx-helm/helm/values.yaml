@@ -1,0 +1,13 @@
+service:
+  name: nginx-svc
+  env: dev
+  type: LoadBalancer
+  port: 80
+deployment:
+  name: nginx-deployment
+  env: dev
+  replicas: 3
+  containers-name: nginx
+  image: nginx
+  containerPort: 80
+  
