@@ -1,19 +1,8 @@
-TODO:
-
-4. build eks cluster
-5. deploy helm chart
-
-helm install nickname chart_name --dry-run
-
-6. curl helm chart
-
-Delete infra by running eksctl commands, kubectl and delete aws configure keys
-
 # Instructions
 
 ### General Tips
 
-If on the Console, expected options infrastructure resources do not shows, ensure you are in the N. Virginia region
+If on the Console and expected AWS resources do not show, ensure you are in the N. Virginia region
 
 1. Create dir scafolding
 
@@ -65,7 +54,9 @@ eksctl create cluster -f eks-config.yaml --dry-run
 eksctl create cluster -f eks-config.yaml
 ```
 
-8. Observe the cluster being created on the AWS Console. Note this will take 10-20 minutes
+8. Observe the cluster being created on the AWS Console. Note this will take 10-20 minutes.
+
+Ensure to be in us-east-1 region, otherwise it won't show
 
 ``` 
 CloudFormation > Stacks > eksctl-dev-cluster > Events
@@ -77,7 +68,7 @@ CloudFormation > Stacks > eksctl-dev-cluster > Events
 Elastic Kubernetes Service > Clusters > eksctl-dev-cluster
 ```
 
-10. cd up one then into helm-magic
+10. cd up one
 
 11. Dry run the Helm chart creation to ensure the creation looks correct
 
@@ -105,6 +96,8 @@ kubectl get all
 ```
 
 15. Test if you can access Nginx using the External-IP of the svc which was printed in the above command.
+First cd into helm-magic, then:
+
 Either:
 
 ```
@@ -120,11 +113,13 @@ The expected confirmation message contains 'If you see this page, the nginx web 
 ```
 
 # delete eks cluster
-eksctl delete cluster --name eksctl-dev-cluster
+eksctl delete cluster --name dev
 
 # sign out of aws console
 
-# delete aws credentials 
+# delete aws credentials, or upon using 'aws configure' again, new credentials can be added
+
+To delete, go into:
 vim ~/.aws/credentials 
 
 ```
