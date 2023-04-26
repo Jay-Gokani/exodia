@@ -96,7 +96,7 @@ kubectl get all
 ```
 
 15. Test if you can access Nginx using the External-IP of the svc which was printed in the above command.
-First cd into helm-magic, then:
+First cd into helm-magic, wait a few minutes, then:
 
 Either:
 
@@ -108,18 +108,19 @@ Or navigate to the webpage.
 
 The expected confirmation message contains 'If you see this page, the nginx web server is successfully installed and working'
 
-16. Clean up
+16. Delete eks cluster 
+This will take several minutes
 
 ```
-
-# delete eks cluster
 eksctl delete cluster --name dev
+```
 
-# sign out of aws console
+Sign out of aws console
 
-# delete aws credentials, or upon using 'aws configure' again, new credentials can be added
+Delete aws credentials, or upon using 'aws configure' again, new credentials can be added
 
 To delete, go into:
-vim ~/.aws/credentials 
 
+```
+vim ~/.aws/credentials 
 ```

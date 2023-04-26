@@ -3,10 +3,7 @@ kind: ClusterConfig
 
 metadata:
     name: dev
-    region: us-east-1 # may need to change
-    tags:
-    # creator: jay-gokani
-    # environment: dev
+    region: us-east-1
 
 nodeGroups:
     - name: standard-workers
