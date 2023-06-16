@@ -86,7 +86,7 @@ helm install wand helm-magic
 Otherwise, you'll get an error message stating 'cannot re-use a name that is still in use'
 
 ```
-hem upgrade -i wand
+helm upgrade -i wand
 ```
 
 14. Confirm all resources are running
